@@ -1,10 +1,15 @@
 var redis = require("redis");
 var _u = require('underscore');
+var config = require('../../config');
 const TAG = "REDIS";
 
 var client = null;
+
+const redisHost = config.REDIS_SERVER_HOST || 'localhost';
+const redisPort = config.REDIS_SERVER_PORT || '6379';
+
 var connectRedisClient = function () {
-    client = redis.createClient();
+    client = redis.createClient([redisHost, redisPort]);
 
     client.on('connect', function () {
         console.log('%s: client connected!', TAG);

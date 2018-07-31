@@ -32,6 +32,7 @@ Thumbs.db
 build/
 public/image_repo
 node_modules/
+pmip/
 tmp/
 package-lock.json
 **/utils/pdf_creator/tmp
